@@ -11,7 +11,9 @@
 <body>
     <h1>Cadastrar novos produto</h1>
     <label form="nome">Nome:</label>
-    <input type="text" name="nome" id="nome" placeholder="Nome da Pessoa">
+    <input type="text" name="nome" id="nome" placeholder="Nome do Produto">
+    <br>
+
     <label form="peso">Peso:</label>
     <input type="number" name="peso" id="peso" placeholder="Peso do Produto">
     <label form="UM">Unidade de Medida:</label>
@@ -21,6 +23,33 @@
         <option value="2">Grama</option>
         <option value="3">Tonelada</option>
     </select>
+    <br>
+
+    <label form="valor">Valor:</label>
+    <input type="number" name="valor" id="valor" placeholder="Valor do produto">
+    <br>
+
+    <label form="estoqueIni">Estoque Incial:</label>
+    <input type="text" name="estoqueIni" id="estoqueIni">
+    <br>
+
+    <label form="merdado">Mercado:</label>
+    <input type="checkbox" id="interno">
+    <label for="interno">Mercado Interno.</label>
+    <input type="checkbox" id="externo">
+    <label for="externo">Mercado Externo.</label>
+    <br>
+
+    <label form="fornecedor">Fornecedor:</label>
+    <select form="fornecedor" id="fornecedor">
+        <option disabled selected value="0">Selecione</option>
+        <option value="1">Fornecedor 1</option>
+        <option value="2">Fornecedor 2</option>
+    </select>
+
+
+
+
 
 
 </body>
