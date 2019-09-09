@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro de produto</title>
 </head>
+
 <body>
     <h1>Cadastrar novos produto</h1>
-    
-    
+    <label form="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" placeholder="Nome da Pessoa">
+    <label form="peso">Peso:</label>
+    <input type="number" name="peso" id="peso" placeholder="Peso do Produto">
+    <label form="UM">Unidade de Medida:</label>
+    <select form="UM" id="UM">
+        <option  disabled selected value="0">Selecione: </option>
+        <option value="1">Quilograma</option>
+        <option value="2">Grama</option>
+        <option value="3">Tonelada</option>
+    </select>
+
+
 </body>
+
 </html>
