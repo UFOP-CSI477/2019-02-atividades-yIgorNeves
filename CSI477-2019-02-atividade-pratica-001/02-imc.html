@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculo de IMC</title>
+    <script src="calculo-imc.js"></script>
+</head>
+
+<body>
+    <form name="dados">
+
+        <label for="peso">Peso:</label>
+        <input type="number" name="peso" id="peso" value="">
+
+        <label for="altura">Altura:</label>
+        <input type="number" name="altura" id="altura" value="">
+
+        <input type="button" value="Calcular" onclick="calcular()">
+
+        <div>
+            <label for="resultado">Resultado:</label>
+            <input type="number" name="resultado" id="resultado" value="">
+
+            <label for="condição">Condição:</label>
+            <input type="text" name="condição" id="condição" value="">
+        </div>
+        <div>
+            <label for="ideal_min">Peso ideal minimo:</label>
+            <input type="text" name="ideal_min" id="ideal_min" value="">
+
+            <label for="ideal_max">Peso ideal maximo:</label>
+            <input type="text" name="ideal_max" id="ideal_max" value="">
+        </div>
+    </form>
+
+</body>
+
+</html>
