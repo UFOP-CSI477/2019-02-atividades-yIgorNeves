@@ -1,0 +1,20 @@
+                 html {
+                     margin-left: 20%;
+                     margin-right: 20%;
+                 }
+                 
+                 input {
+                     font-size: 20px;
+                     font-family: 'Times New Roman';
+                     border-radius: 5px;
+                     border: solid black;
+                 }
+                 
+                 label {
+                     font-size: 20px;
+                     font-family: 'Times New Roman';
+                 }
+                 
+                 .container {
+                     text-align: center;
+                 }

@@ -6,22 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Corridas de carrinho de rolimã</title>
+    <script src="corrida.js"></script>
 </head>
 
 <body>
-    <form>
+    <form name="formulario" method="POST" onsubmit=adicionaLinha(minhaTabela)>
+        <label for="largada">Largada:</label>
+        <input type="numer" name="largada" id="largada">
 
-        <div class="controle">
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome">
-        </div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
 
-        <div class="controle">
-            <label for="tempo">Tempo:</label>
-            <input type="text" name="tempo" id="tempo">
-        </div>
+        <label for="temppo">Tempo:</label>
+        <input type="number" name="tempo" id="tempo">
+
+        <input type="button" value="Confirmar" onclick="adicionaLinha(minhaTabela)">
 
     </form>
+    <br>
+    <table border="1" width='250' height='250'>
+        <thead>
+            <tr>
+                <th>Largada</th>
+                <th>Nome</th>
+                <th>Tempo</th>
+            </tr>
+        </thead>
+        <tbody id="minhaTabela"></tbody>
+    </table>
+
+    <input type="button" value="Iniciar Corrida">
 
 </body>
 
