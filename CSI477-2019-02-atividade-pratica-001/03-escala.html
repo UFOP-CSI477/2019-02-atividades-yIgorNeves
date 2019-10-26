@@ -5,10 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+    <script src="03-escala.css"></script>
+    <script src="03-escala.js"></script>
+
+
     <title>Escala Richter</title>
 </head>
 
 <body>
+    <div class="jumbotron jumbotron-fluid">
+        <h1>Medidor de Escala Richter</h1>
+    </div>
+    <form name="formulario" class="container">
+        <label for="magnitude">Magnitude do Terremoto: </label>
+        <br>
+        <input type="text" name="magnitude" id="magnitude">
+        <br>
+        <label for="intTempo">Intervalo de Tempo: </label>
+        <br>
+        <input type="text" name="intTempo" id="intTempo">
+        <p></p>
+        <input type="button" value="Calcular" class="btn btn-success" onclick="calcular()">
+        <p></p>
+        <br>
+        <label for="resultado">Magnitude Richter:</label>
+        <br>
+        <input type="text" id="resultado" name="resultado">
+        <br>
+        <label for="efeito">Efeitos: </label>
+        <br>
+        <input type="text" name="efeito" id="efeito" class="form-control">
+    </form>
+
 
 </body>
 
