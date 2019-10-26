@@ -7,25 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Corridas de carrinho de rolimã</title>
     <script src="corrida.js"></script>
+    <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="01-corrida.css">
+
 </head>
 
 <body>
-    <form name="formulario" method="POST" onsubmit=adicionaLinha(minhaTabela)>
+    <form name="formulario">
         <label for="largada">Largada:</label>
+        <br>
         <input type="numer" name="largada" id="largada">
-
+        <br>
         <label for="nome">Nome:</label>
+        <br>
         <input type="text" name="nome" id="nome">
+        <br>
 
         <label for="temppo">Tempo:</label>
+        <br>
         <input type="number" name="tempo" id="tempo">
+        <br>
+        <p></p>
 
-        <input type="button" value="Confirmar" onclick="adicionaLinha(minhaTabela)">
+        <input type="button" value="Confirmar" onclick="adicionaLinha(minhaTabela)" class="btn btn-primary">
+        <input type="reset" class="btn btn-danger">
 
     </form>
     <br>
-    <table border="1" width='250' height='250'>
-        <thead>
+    <table border="1" width='250' height='250' class="table table-hover">
+        <thead class="thead-dark">
             <tr>
                 <th>Largada</th>
                 <th>Nome</th>
@@ -35,7 +45,7 @@
         <tbody id="minhaTabela"></tbody>
     </table>
 
-    <input type="button" value="Iniciar Corrida">
+    <input type="button" value="Iniciar Corrida" class="btn btn-success">
 
 </body>
 

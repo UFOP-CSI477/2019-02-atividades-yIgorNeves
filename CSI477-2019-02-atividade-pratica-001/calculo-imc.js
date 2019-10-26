@@ -25,6 +25,8 @@ function calcular() {
         let p_min = (alt.value * alt.value) * 18.5;
         let p_max = (alt.value * alt.value) * 24.9;
 
+        console.log(res);
+
         if (res < 18.5) {
             document.dados.condição.value = "Subnutrição";
         } else if (res > 18.5 && res < 24.9) {
@@ -41,6 +43,5 @@ function calcular() {
 
         document.dados.ideal_min.value = (p_min.toFixed(2));
         document.dados.ideal_max.value = (p_max.toFixed(2));
-
     }
 }

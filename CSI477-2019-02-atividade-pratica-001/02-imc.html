@@ -28,23 +28,24 @@
             </div>
             <br>
             <div>
-                <input type="button" value="Calcular" onclick="calcular()" class="alert-success">
-                <input type="reset" value="Limpar" class="alert-warning"></div>
+                <input type="button" value="Calcular" onclick="calcular()" class="btn btn-success">
+                <input type="reset" value="Limpar" class="btn btn-danger">
+            </div>
             <br>
             <div>
                 <label for="resultado">Resultado:</label>
-                <input type="number" name="resultado" id="resultado" value="" placeholder="Seu IMC.">
+                <input type="number" name="resultado" id="resultado" value="" placeholder="Seu IMC." disabled>
             </div>
             <div>
                 <label for="condição">Condição:</label>
-                <input type="text" name="condição" id="condição" value="" placeholder="Sua condiçao atual.">
+                <input type="text" name="condição" id="condição" value="" placeholder="Sua condiçao atual." disabled>
             </div>
             <div>
                 <label for="ideal_min">Peso ideal minimo:</label>
-                <input type="text" name="ideal_min" id="ideal_min" value="">
+                <input type="text" name="ideal_min" id="ideal_min" value="" disabled>
             </div>
             <label for="ideal_max">Peso ideal maximo:</label>
-            <input type="text" name="ideal_max" id="ideal_max" value="">
+            <input type="text" name="ideal_max" id="ideal_max" value="" disabled>
     </div>
     </form>
     </div>
