@@ -25,12 +25,8 @@ function calcular() {
         let p_min = (alt.value * alt.value) * 18.5;
         let p_max = (alt.value * alt.value) * 24.9;
 
-        document.dados.ideal_min.value = (p_min.toFixed(2));
-        document.dados.ideal_max.value = (p_max.toFixed(2));
-        console.log(res)
         if (res < 18.5) {
             document.dados.condição.value = "Subnutrição";
-
         } else if (res > 18.5 && res < 24.9) {
             document.dados.condição.value = "Peso Saudável";
         } else if (res.value > 25 && res.value < 29.9) {
@@ -42,5 +38,9 @@ function calcular() {
         } else if (res.value > 40) {
             document.dados.condição.value = "Obesidade grau 3";
         }
+
+        document.dados.ideal_min.value = (p_min.toFixed(2));
+        document.dados.ideal_max.value = (p_max.toFixed(2));
+
     }
 }
