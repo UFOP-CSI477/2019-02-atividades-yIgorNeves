@@ -20,22 +20,24 @@
     <form name="formulario" class="container">
         <label for="magnitude">Magnitude do Terremoto: </label>
         <br>
-        <input type="text" name="magnitude" id="magnitude">
+        <input type="number" name="magnitude" id="magnitude">
         <br>
         <label for="intTempo">Intervalo de Tempo: </label>
         <br>
-        <input type="text" name="intTempo" id="intTempo">
+        <input type="nummber" name="intTempo" id="intTempo">
         <p></p>
         <input type="button" value="Calcular" class="btn btn-success" onclick="calcular()">
+        <input type="reset" class="btn btn-danger" value="Limpar Campos">
+
         <p></p>
         <br>
         <label for="resultado">Magnitude Richter:</label>
         <br>
-        <input type="text" id="resultado" name="resultado">
+        <input type="text" id="resultado" name="resultado" class="form-control" disabled>
         <br>
         <label for="efeito">Efeitos: </label>
         <br>
-        <input type="text" name="efeito" id="efeito" class="form-control">
+        <input type="text" name="efeito" id="efeito" class="form-control" disabled>
     </form>
 
 
