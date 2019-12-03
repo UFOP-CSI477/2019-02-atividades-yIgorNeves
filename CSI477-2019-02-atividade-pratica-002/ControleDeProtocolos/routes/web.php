@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principal');
 });
+
+Route::get('/login',['uses'=>'LoginController@index']);
+Route::get('/cadastro',['uses'=>'CadastroController@index']);
+Route::get('/listar',['uses'=>'ListaController@index']);
