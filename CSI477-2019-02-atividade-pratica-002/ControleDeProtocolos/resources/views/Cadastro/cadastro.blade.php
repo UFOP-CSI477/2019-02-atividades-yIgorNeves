@@ -10,20 +10,24 @@
         <div class="card card-signin my-5">
             <div class="card-body">
             <h5 class="card-title text-center">Cadastro</h5>
-            <form class="form-signin">
+            <form class="form-signin" action="{{route('site.cadastro.salvar')}}" method="POST">
+                {{ csrf_field() }}
                 <div class="form-label-group">
-                    <input type="user" id="inputUser" class="form-control" placeholder="Usuário" required autofocus>
                     <label for="inputUser">Usuário</label>
+                    <input name="name" type="user" id="inputUser" class="form-control" placeholder="Usuário" required autofocus>
+                    
                 </div>
                 
                 <div class="form-label-group">
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                     <label for="inputEmail">E-mail</label>
+                    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    
                 </div>
 
                 <div class="form-label-group">
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
                     <label for="inputPassword">Senha</label>
+                    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                    
                 </div>
 
                 <div class="custom-control custom-checkbox mb-3">

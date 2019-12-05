@@ -7,8 +7,7 @@
     <table class="table table-striped table-bordered">
     <thead class="table-light">
             <tr>
-                <th>ID</th>      
-                <th>Nome</th>      
+                <th>ID</th>  
                 <th>User ID</th>      
                 <th>Subject ID</th>      
                 <th>Descrição</th>
@@ -20,7 +19,6 @@
             @foreach ($registros as $c)
             <tr>
                 <td>{{ $c->id }}</td>
-                <td>{{ $c->name }}</td>
                 <td>{{ $c->user_id }}</td>
                 <td>{{ $c->subject_id }}</td>
                 <td>{{ $c->description }}</td>

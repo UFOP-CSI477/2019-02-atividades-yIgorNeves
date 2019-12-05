@@ -19,7 +19,7 @@ class LoginController extends Controller
             return redirect()->route('admin.requets');
         }
 
-        return redirect()->route('Login.login');
+        return redirect()->route('site.login');
     }
 
     public function sair(){

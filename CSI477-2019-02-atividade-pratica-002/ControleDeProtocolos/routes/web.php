@@ -14,15 +14,20 @@
 // Route::get('/', function () {
 //     return view('homepage');
 // });
-
-Route::get('/cadastro',['uses'=>'CadastroController@index']);
 Route::get('/',['as'=>'site.home','uses'=>'Site\SiteController@index']);
+
+Route::get('/cadastro',['as'=>'site.cadastro','uses'=>'Site\CadastroController@index']);
+Route::post('/cadastro/salvar',['as'=>'site.cadastro.salvar','uses'=>'UserController@store']);
+
+
 Route::get('/login',['as'=>'site.login','uses'=>'Site\LoginController@index']);
 Route::get('/login/sair',['as'=>'site.login.sair','uses'=>'Site\LoginController@sair']);
 Route::post('/login/entrar',['as'=>'site.login.entrar','uses'=>'Site\LoginController@entrar']);
+
 Route::get('/sobre',['uses'=>'SobreController@index']);
 
 Route::group(['middleware'=>'auth'],function(){    
+    
     Route::get('/admin/requets',['as'=>'admin.requets','uses'=>'Admin\RequetController@index']);
     Route::get('/admin/requets/adicionar',['as'=>'admin.requets.adicionar','uses'=>'Admin\RequetController@adicionar']);
     Route::post('/admin/requets/salvar',['as'=>'admin.requets.salvar','uses'=>'Admin\RequetController@salvar']);

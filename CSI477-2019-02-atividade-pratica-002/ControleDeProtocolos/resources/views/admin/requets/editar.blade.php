@@ -9,7 +9,9 @@
             <form action="{{route('admin.requets.atualizar', $registro->id)}}" method="POST">
                 {{csrf_field()}}    
                 <input type="hidden" name="_method" value="put">
+
                 @include('admin.requets._form')                
+                
                 <button class="btn btn-success">Atualizar</button>
             </form>
         </div>
