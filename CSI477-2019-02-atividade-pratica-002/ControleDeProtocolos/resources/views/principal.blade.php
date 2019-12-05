@@ -2,20 +2,25 @@
 <html lang="br" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Página principal</title>
+    <title> @yield('pageTitle') - Controle de Protocolos</title>
   </head>
   <body>
 
     <!-- Links - menu lateral //-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #563D7C;">
 
-      <span class="navbar-brand mb-0 h1">Acadêmico</span>
+      <span class="navbar-brand mb-0 h1">Controle de Protocolos</span>
 
       <ul class="navbar-nav">
           <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/welcome" class="nav-link">Sobre</a></li>
-          <li class="nav-item"><a href="/listar" class="nav-link">Listar Requerimentos</a></li>
-          {{-- <li class="nav-item"><a href="{{ route('cidades.index') }}" class="nav-link">Cidades</a></li> --}}
+          @if (Auth::guest())
+            <li class="nav-item"><a href="/login" class="nav-link">Login</a></li> 
+          @else
+            <li class="nav-item"><a href="{{route('admin.requets')}}" class="nav-link">Listar Requerimentos</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">{{Auth::user()->name}}</a></li>
+            <li class="nav-item"><a href="{{route('site.login.sair')}}" class="nav-link">Sair</a></li>            
+          @endif         
+          <li class="nav-item"><a href="/sobre" class="nav-link">Sobre</a></li>
       </ul>
     </nav>
 
