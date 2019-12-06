@@ -37,22 +37,23 @@ class RequetController extends Controller
         $user = User::all();
 
         $registro = Requet::find($id);
-        return view('admin.requets.adicionar', compact($registro));
+        return view('admin.requets.editar', compact('registro', 'sub', 'user'));
     }
 
     public function atualizar(Request $req, $id){
-        $sub = Subject::all();
-        $user = User::all();
+        // $sub = Subject::all();
+        // $user = User::all();
 
         $dados = $req->all();
-        Requet::find($id)->update($dados);
+        $find = Requet::find($id);
+        $find->fill($dados);
+        $find->save();
 
         return redirect()->route('admin.requets');
     }
 
     public function deletar($id){
-        $sub = Subject::all();
-        $user = User::all();
+       
         Requet::find($id)->delete();
         return redirect()->route('admin.requets');
     }

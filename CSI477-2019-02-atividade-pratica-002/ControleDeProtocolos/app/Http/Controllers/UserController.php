@@ -19,7 +19,7 @@ class UserController extends Controller
         $user->fill($request->all());
         $user->type =1;
         
-        $user->fill(['password'=>Hash::make($request->newPassword)])->save();
+        $user->fill(['password'=>Hash::make($request->password)])->save();
         $user->save();
 
         return redirect()->route('site.login');
