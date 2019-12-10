@@ -12,9 +12,10 @@ class ProfessorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $prof)
     {
-        //
+        $professor=Professor::where('area', 'like', "%$prof->area%")->orderBy('area', 'ASC')->orderBy('name', 'ASC')->get();        
+        return view('projetos.relatoriosProfessores',compact('professor'));
     }
 
     /**
@@ -81,5 +82,10 @@ class ProfessorController extends Controller
     public function destroy(Professor $professor)
     {
         //
+    }
+
+    public function pesquisa(Request $prof){
+        $professor=Professor::where('area', 'like', "%$prof->area%")->orderBy('area', 'ASC')->orderBy('name', 'ASC')->get();        
+        return view('teste',compact('professor'));
     }
 }

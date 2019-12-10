@@ -12,9 +12,11 @@ class AlunoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $estudante)
     {
-        //
+       
+        $aluno = Aluno::where('curso', 'like', "%$estudante->area%")->orderBy('curso', 'ASC')->orderBy('name', 'ASC')->get(); 
+        return view('projetos.relatoriosAlunos', compact('aluno'));
     }
 
     /**

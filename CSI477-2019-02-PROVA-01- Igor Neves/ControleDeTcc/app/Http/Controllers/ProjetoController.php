@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Projeto;
 use Illuminate\Http\Request;
+use App\Aluno;
+use App\Professor;
 
 class ProjetoController extends Controller
 {
@@ -12,9 +14,10 @@ class ProjetoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $tccs)
     {
-        //
+        $tcc=Projeto::where('ano', 'like', "%$tccs->ano%")->orderBy('ano', 'DESC')->orderBy('semestre', 'DESC')->orderBy('aluno_id', 'ASC')->get();        
+        return view('projetos.relatoryProjects',compact('tcc'));
     }
 
     /**
@@ -82,4 +85,28 @@ class ProjetoController extends Controller
     {
         //
     }
+
+    public function addIndex(){
+
+        $prof = Professor::all();
+        $aluno = Aluno::all();
+        $tcc = Projeto::all();
+        return view('projetos.incluir', compact('tcc'));
+    }
+    public function adicionar(){
+
+        $prof = Professor::all();
+        $aluno = Aluno::all();
+        return view('projetos.adicionar', compact('prof','aluno'));
+    }
+
+    public function salvar(Request $request){
+        $proj = new Projeto;
+        $proj->fill($request->all());
+        
+        $proj->save();
+
+        return redirect()->route('relatorio.incluir');
+    }
+
 }

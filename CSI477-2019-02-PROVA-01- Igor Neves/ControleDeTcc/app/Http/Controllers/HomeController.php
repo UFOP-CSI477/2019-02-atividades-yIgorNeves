@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Professor;
+use App\Projeto;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('teste');
+        $professor = Professor::all();
+        return view('teste', compact('professor'));
+    }
+
+    public function sobre(){
+        return view('sobre');
+    }
+
+    public function relatorios(){
+        $registros = Projeto::all();
+        return view('relatoryProjects',compact('registros'));
     }
 }
