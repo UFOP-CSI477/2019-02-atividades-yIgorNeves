@@ -11,16 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index' )->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
 
 Route::get('/sobre', ['as' => 'sobre', 'uses' => 'HomeController@sobre']);
 Route::post('/pesquisa', ['as' => 'pesquisa', 'uses' => 'ProfessorController@pesquisa']);

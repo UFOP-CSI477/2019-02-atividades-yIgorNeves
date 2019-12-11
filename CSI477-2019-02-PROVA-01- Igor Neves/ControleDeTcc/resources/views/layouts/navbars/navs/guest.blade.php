@@ -18,10 +18,15 @@
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link text-primary">
-                        <i class="tim-icons icon-minimal-left"></i> {{ __('Back to Dashboard') }}
+                    <a href="{{ route('home') }}" class="nav-link ">
+                        <i class="tim-icons icon-bullet-list-67"></i> {{ __('Professores') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                        <a href="{{ route('relatorio.tcc') }}" class="nav-link ">
+                            <i  class="tim-icons icon-attach-87"></i> {{ __('Projetos') }}
+                        </a>
+                    </li>
                 <li class="nav-item ">
                     <a href="{{ route('register') }}" class="nav-link">
                         <i class="tim-icons icon-laptop"></i> {{ __('Register') }}

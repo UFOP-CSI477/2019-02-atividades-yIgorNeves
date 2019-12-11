@@ -5,6 +5,7 @@
             <a href="#" class="simple-text logo-normal">{{ __('Controle de TCC') }}</a>
         </div>
         <ul class="nav">
+            @guest
             <li>
                     <a data-toggle="collapse" href="#laravel-examples1" aria-expanded="true">
                         <i class="fab fa-laravel" ></i>
@@ -30,37 +31,66 @@
                     </div>
                 </li>
 
-            <li>
-                <a data-toggle="collapse" href="#laravel-examples2" aria-expanded="true">
-                    <i class="tim-icons icon-paper" ></i>
-                    <span class="nav-link-text" >{{ __('Area Administradtiva') }}</span>
-                    <b class="caret mt-1"></b>
-                </a>
+                @else
+                <li>
+                        <a data-toggle="collapse" href="#laravel-examples1" aria-expanded="true">
+                            <i class="fab fa-laravel" ></i>
+                            <span class="nav-link-text" >{{ __('Area Geral') }}</span>
+                            <b class="caret mt-1"></b>
+                        </a>
+        
+                        <div class="collapse show" id="laravel-examples1">
+                            <ul class="nav pl-4">
+                                <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
+                                    <a href="{{ route('home') }}">
+                                        <i class="tim-icons icon-bullet-list-67"></i>
+                                        <p>{{ __('Pesquisa de Professores') }}</p>
+                                    </a>
+                                </li>
+                                <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
+                                    <a href="{{ route('relatorio.tcc')  }}">
+                                        <i class="tim-icons icon-attach-87"></i>
+                                        <p>{{ __('Relatorio de Projetos') }}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
-                <div class="collapse show" id="laravel-examples2">
-                    <ul class="nav pl-4">
-                        <li @if ($pageSlug ?? '' == 'profile') class="active " @endif>
-                            <a href="{{ route('relatorio.aluno')  }}">
-                                <i class="tim-icons icon-single-02"></i>
-                                <p>{{ __('Relatorio de estudantes') }}</p>
-                            </a>
-                        </li>
-                        <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
-                            <a href="{{ route('relatorio.professor')  }}">
-                                <i class="tim-icons icon-bullet-list-67"></i>
-                                <p>{{ __('Relatorio de professores') }}</p>
-                            </a>
-                        </li>
-                        <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
-                                <a href="{{ route('relatorio.incluir')  }}">
-                                    <i class="tim-icons icon-notes"></i>
-                                    <p>{{ __('Incluir Projetos') }}</p>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </li>
-            <li>
+                <li>
+                        <a data-toggle="collapse" href="#laravel-examples2" aria-expanded="true">
+                            <i class="tim-icons icon-paper" ></i>
+                            <span class="nav-link-text" >{{ __('Area Administradtiva') }}</span>
+                            <b class="caret mt-1"></b>
+                        </a>
+        
+                        <div class="collapse show" id="laravel-examples2">
+                            <ul class="nav pl-4">
+                                <li @if ($pageSlug ?? '' == 'profile') class="active " @endif>
+                                    <a href="{{ route('relatorio.aluno')  }}">
+                                        <i class="tim-icons icon-single-02"></i>
+                                        <p>{{ __('Relatorio de estudantes') }}</p>
+                                    </a>
+                                </li>
+                                <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
+                                    <a href="{{ route('relatorio.professor')  }}">
+                                        <i class="tim-icons icon-bullet-list-67"></i>
+                                        <p>{{ __('Relatorio de professores') }}</p>
+                                    </a>
+                                </li>
+                                <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
+                                        <a href="{{ route('relatorio.incluir')  }}">
+                                            <i class="tim-icons icon-notes"></i>
+                                            <p>{{ __('Incluir Projetos') }}</p>
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+            @endguest
+           
+            
+            {{-- <li>
                     <a data-toggle="collapse" href="#laravel-examples3" aria-expanded="true">
                         <i class="tim-icons icon-settings" ></i>
                         <span class="nav-link-text" >{{ __('Perfis') }}</span>
@@ -83,7 +113,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
             {{-- <li @if ($pageSlug ?? '' == 'icons') class="active " @endif>
                 <a href="{{ route('pages.icons') }}">
                     <i class="tim-icons icon-atom"></i>
