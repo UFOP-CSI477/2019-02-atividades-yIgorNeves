@@ -41,9 +41,9 @@
 
                                 <div class="dropdown show">
                                     <label for="nome_professor"> Nome do professor</label>
-                                    <select id="nome_professor" class="form-control" >                                                                    
+                                    <select id="nome_professor" class="form-control" name="professor_id">                                                                    
                                         @foreach ($prof as $x)
-                                            <option value="{{isset($x->id) ? $x->id : ''}}" name="dropdown-menu dropdown-black">{{isset($x->name) ? $x ->name : ''}}</option>
+                                            <option value="{{isset($x->id) ? $x->id : ''}}" class="dropdown-menu dropdown-black" >{{isset($x->name) ? $x ->name : ''}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -52,7 +52,7 @@
                                     <label for="nome_aluno"> Nome do aluno</label>
                                     <select id="nome_aluno" class="form-control" name="aluno_id">                                                                    
                                         @foreach ($aluno as $x)
-                                            <option value="{{isset($x->id) ? $x->id : ''}}" >{{isset($x->name) ? $x ->name : ''}}</option>
+                                            <option value="{{isset($x->id) ? $x->id : ''}}"  class="dropdown-menu dropdown-black">{{isset($x->name) ? $x ->name : ''}}</option>
                                         @endforeach
                                     </select>
                                 </div> 

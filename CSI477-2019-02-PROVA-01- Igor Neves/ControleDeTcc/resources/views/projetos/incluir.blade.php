@@ -30,12 +30,12 @@
 
                             @foreach ($tcc as $c)
                                 <tr>
-                                    <td>{{ $c->id }}</td>
-                                    <td>{{ $c->ano }}</td>
+                                    <td>{{ $c->id }}</td>                                   
                                     <td>{{ $c->titulo }}</td>
+                                    <td>{{ $c->ano }}</td>
                                     <td>{{ $c->semestre }}</td>
-                                    <td>{{ $c->professor_id }}</td>
-                                    <td>{{ $c->aluno_id }}</td>
+                                    <td>{{ $c->professor->name }}</td>
+                                    <td>{{ $c->aluno->name }}</td>
                                 </tr>
                             @endforeach
                                    

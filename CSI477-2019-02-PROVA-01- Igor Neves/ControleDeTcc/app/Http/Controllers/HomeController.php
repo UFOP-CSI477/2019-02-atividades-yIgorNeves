@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $professor = Professor::all();
+        $professor = Professor::orderBy('area', 'ASC')->orderBy('name', 'ASC')->get();  
         return view('teste', compact('professor'));
     }
 

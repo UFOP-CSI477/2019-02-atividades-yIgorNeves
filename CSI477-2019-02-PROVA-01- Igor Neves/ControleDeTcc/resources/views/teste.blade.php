@@ -18,6 +18,7 @@
                 <div class="card-body">
                         <table class="table tablesorter " id="">
                                 <thead class=" text-primary">
+                                    <th scope="col">{{ __('ID') }}</th>
                                     <th scope="col">{{ __('Name') }}</th>
                                     <th scope="col">{{ __('Area') }}</th>
                                     <th scope="col"></th>
@@ -26,6 +27,7 @@
                                 <tbody>
                                     @foreach ($professor as $c)
                                         <tr>
+                                            <td>{{$c->id}}</td>
                                             <td>{{ $c->name }}</td>
                                             <td>{{ $c->area }}</td>
                                         </tr>

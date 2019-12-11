@@ -1,6 +1,6 @@
 @extends('layouts.app', ['class' => 'register-page', 'page' => __('Pagina de Registro'), 'contentClass' => 'register-page'])
 
-@section('pageTittle', 'Registro')
+@section('pageTitle', 'Registro')
 
 @section('content')
     <div class="row">

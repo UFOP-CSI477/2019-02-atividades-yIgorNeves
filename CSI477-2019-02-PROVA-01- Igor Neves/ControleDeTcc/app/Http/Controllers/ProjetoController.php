@@ -15,9 +15,11 @@ class ProjetoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $tccs)
-    {
-        $tcc=Projeto::where('ano', 'like', "%$tccs->ano%")->orderBy('ano', 'DESC')->orderBy('semestre', 'DESC')->orderBy('aluno_id', 'ASC')->get();        
-        return view('projetos.relatoryProjects',compact('tcc'));
+    
+    {  
+        $tcc = Projeto::join('alunos','projetos.aluno_id','=','alunos.id')->orderBy('ano', 'DESC')->orderBy('semestre', 'DESC')->orderBy('alunos.name', 'ASC')->get('projetos.*');
+      
+        return view('projetos.relatoryProjects', compact('tcc'));
     }
 
     /**
@@ -93,6 +95,7 @@ class ProjetoController extends Controller
         $tcc = Projeto::all();
         return view('projetos.incluir', compact('tcc'));
     }
+
     public function adicionar(){
 
         $prof = Professor::all();
@@ -106,7 +109,7 @@ class ProjetoController extends Controller
         
         $proj->save();
 
-        return redirect()->route('relatorio.incluir');
+        return redirect()->route('relatorio.tcc');
     }
 
 }

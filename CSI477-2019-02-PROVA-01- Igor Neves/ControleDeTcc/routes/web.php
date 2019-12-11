@@ -24,14 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('/sobre', ['as' => 'sobre', 'uses' => 'HomeController@sobre']);
 Route::post('/pesquisa', ['as' => 'pesquisa', 'uses' => 'ProfessorController@pesquisa']);
-
-Route::get('/relatorios', ['as' => 'relatorios', 'uses' => 'HomeController@relatorios']);
-Route::get('/relatorioAluno', ['as' => 'relatorio.aluno', 'uses' => 'AlunoController@index']);
-Route::get('/relatorioProfessor', ['as' => 'relatorio.professor', 'uses' => 'ProfessorController@index']);
 Route::get('/relatorioTCC', ['as' => 'relatorio.tcc', 'uses' => 'ProjetoController@index']);
-Route::get('/incluirTCC', ['as' => 'relatorio.incluir', 'uses' => 'ProjetoController@addIndex']);
-Route::get('/adicionar', ['as' => 'relatorio.adicionar', 'uses' => 'ProjetoController@adicionar']);
-Route::post('/salvarTCC', ['as' => 'relatorio.salvar', 'uses' => 'ProjetoController@salvar']);
+
 
 
 
@@ -44,6 +38,13 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
 		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
 		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
+		
+		Route::get('/relatorios', ['as' => 'relatorios', 'uses' => 'HomeController@relatorios']);
+		Route::get('/relatorioAluno', ['as' => 'relatorio.aluno', 'uses' => 'AlunoController@index']);
+		Route::get('/relatorioProfessor', ['as' => 'relatorio.professor', 'uses' => 'ProfessorController@index']);
+		Route::get('/incluirTCC', ['as' => 'relatorio.incluir', 'uses' => 'ProjetoController@addIndex']);
+		Route::get('/adicionar', ['as' => 'relatorio.adicionar', 'uses' => 'ProjetoController@adicionar']);
+		Route::post('/salvarTCC', ['as' => 'relatorio.salvar', 'uses' => 'ProjetoController@salvar']);
 });
 
 Route::group(['middleware' => 'auth'], function () {

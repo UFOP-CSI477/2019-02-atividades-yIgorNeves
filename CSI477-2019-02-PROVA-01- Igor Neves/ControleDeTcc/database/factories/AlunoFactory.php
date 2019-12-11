@@ -11,7 +11,7 @@ $factory->define(Aluno::class, function (Faker $faker) {
       
     return [
         'name' => $faker->name,
-        'curso' => $curso[$order1], 
+        'curso' => $faker->randomElement($curso),
     ];
     
 });

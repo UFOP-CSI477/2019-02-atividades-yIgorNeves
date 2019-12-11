@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Professor;
+
 class PageController extends Controller
 {
     /**
@@ -72,5 +74,11 @@ class PageController extends Controller
     public function upgrade()
     {
         return view('pages.upgrade');
+    }
+
+    public function index()
+    {
+        $professor = Professor::orderBy('area', 'ASC')->orderBy('name', 'ASC')->get();  
+        return view('teste', compact('professor'));
     }
 }

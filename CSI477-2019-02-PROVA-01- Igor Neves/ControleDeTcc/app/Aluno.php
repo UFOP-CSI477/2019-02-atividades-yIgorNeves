@@ -9,4 +9,8 @@ class Aluno extends Model
     protected $fillable = [
         'name', 'curso',
     ];
+
+    public function projetos() {
+        return $this->hasMany('App\Projeto');
+      }
 }
